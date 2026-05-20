@@ -83,7 +83,7 @@ model.compile(
 
 ### Training Log — All Three Models
 
-![Training Log](assets/beluan_training_log.png)
+![Training Log](beluan_training_log.png)
 
 The training log shows epoch-by-epoch metrics for all three models:
 
@@ -124,7 +124,7 @@ The training log shows epoch-by-epoch metrics for all three models:
 
 #### MobileNetV2 & EfficientNetB0
 
-![MobileNetV2 and EfficientNetB0 Training Curves](assets/beluan_mobilenet_efficientnet_curves.png)
+![MobileNetV2 and EfficientNetB0 Training Curves](beluan_mobilenet_efficientnet_curves.png)
 
 **MobileNetV2 (top panel):**
 - Accuracy (left): Training accuracy (blue) climbed from ~0.44 to ~0.95 over 10 epochs. Validation accuracy (orange) shot to ~0.93 as early as epoch 1 and stabilized at ~0.94 — the frozen ImageNet features provide immediate, powerful generalization
@@ -150,7 +150,7 @@ The top panel shows a partial curve from a previous run. The **bottom panel (Res
 
 ## 📊 Part 12 — Master Performance Comparison Table
 
-![Comparison Table Output](assets/beluan_comparison_table.png)
+![Comparison Table Output](beluan_comparison_table.png)
 
 | Model | Train Acc | Train Loss | Val Acc | Val Loss | Precision | Recall | F1-score | AUC |
 |:------|:---------:|:----------:|:-------:|:--------:|:---------:|:------:|:--------:|:---:|
@@ -174,7 +174,7 @@ The top panel shows a partial curve from a previous run. The **bottom panel (Res
 
 ### MobileNetV2 — Evaluation Report
 
-![MobileNetV2 Classification Report](assets/beluan_report_mobilenet.png)
+![MobileNetV2 Classification Report](beluan_report_mobilenet.png)
 
 | Class | Precision | Recall | F1-score | Support |
 |:------|:---------:|:------:|:--------:|:-------:|
@@ -209,7 +209,7 @@ The top panel shows a partial curve from a previous run. The **bottom panel (Res
 
 ### EfficientNetB0 — Evaluation Report
 
-![EfficientNetB0 Classification Report](assets/beluan_report_efficientnet.png)
+![EfficientNetB0 Classification Report](beluan_report_efficientnet.png)
 
 | Class | Precision | Recall | F1-score | Support |
 |:------|:---------:|:------:|:--------:|:-------:|
@@ -226,7 +226,7 @@ The top panel shows a partial curve from a previous run. The **bottom panel (Res
 
 ### ResNet50 — Evaluation Report
 
-![ResNet50 Classification Report](assets/beluan_report_resnet50.png)
+![ResNet50 Classification Report](beluan_report_resnet50.png)
 
 | Class | Precision | Recall | F1-score | Support |
 |:------|:---------:|:------:|:--------:|:-------:|
@@ -263,7 +263,7 @@ The top panel shows a partial curve from a previous run. The **bottom panel (Res
 
 ### ResNet50 Confusion Matrix
 
-![ResNet50 Confusion Matrix](assets/beluan_cm_resnet50.png)
+![ResNet50 Confusion Matrix](beluan_cm_resnet50.png)
 
 The ResNet50 confusion matrix reveals a characteristic **partial-collapse pattern** with 3-epoch training:
 - A few classes show bright diagonal entries (class13: 71, class9: 54, class3: 50, class7: 43) — these are the classes the model learned to distinguish early
@@ -279,7 +279,7 @@ The ResNet50 confusion matrix reveals a characteristic **partial-collapse patter
 
 ### MobileNetV2 ROC Curve
 
-![MobileNetV2 ROC Curve](assets/beluan_roc_mobilenet.png)
+![MobileNetV2 ROC Curve](beluan_roc_mobilenet.png)
 
 The MobileNetV2 ROC plot shows **near-perfect curves hugging the top-left corner** for nearly all classes:
 
@@ -299,7 +299,7 @@ The MobileNetV2 ROC plot shows **near-perfect curves hugging the top-left corner
 
 ### EfficientNetB0 & ResNet50 ROC Curves
 
-![EfficientNetB0 and ResNet50 ROC Curves](assets/beluan_roc_efficientnet_resnet50.png)
+![EfficientNetB0 and ResNet50 ROC Curves](beluan_roc_efficientnet_resnet50.png)
 
 **EfficientNetB0 ROC (top portion):**
 - Most curves are clustered near the diagonal — consistent with near-random class predictions
@@ -329,7 +329,7 @@ The MobileNetV2 ROC plot shows **near-perfect curves hugging the top-left corner
 
 ### MobileNetV2 & EfficientNetB0 Grad-CAM
 
-![MobileNetV2 and EfficientNetB0 Grad-CAM](assets/beluan_gradcam_mobilenet_efficientnet.png)
+![MobileNetV2 and EfficientNetB0 Grad-CAM](beluan_gradcam_mobilenet_efficientnet.png)
 
 Both models were tested on the same **flower image** (appears to be a blanket flower / *Gaillardia*):
 
@@ -349,7 +349,7 @@ Both models were tested on the same **flower image** (appears to be a blanket fl
 
 ### ResNet50 Grad-CAM
 
-![ResNet50 Grad-CAM](assets/beluan_gradcam_resnet50.png)
+![ResNet50 Grad-CAM](beluan_gradcam_resnet50.png)
 
 **ResNet50 (same flower image):**
 - **Heatmap:** Activation is dispersed with a notable concentration toward the **center-left** of the image — partially overlapping with the flower's center disk area
