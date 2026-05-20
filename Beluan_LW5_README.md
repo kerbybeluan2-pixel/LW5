@@ -617,27 +617,6 @@ MobileNetV2's combination of near-perfect accuracy, smallest model footprint, fa
 
 ---
 
-## ⚠️ Technical Notes
+Google Colab Link: https://colab.research.google.com/drive/1LANjF4TDDvyphjzUrx0G2yB2IdmGsH52?usp=sharing\
 
-<details>
-<summary><b>AUC = nan — Explanation & Fix</b></summary>
-
-The `nan` AUC values reported in the comparison table and console output are caused by a **dataset artifact**: a `Colab Files` entry appears as a class in the dataset directory with **0 validation samples**. When scikit-learn attempts to compute the ROC AUC for this class, it encounters a binary label array with only one unique value (all zeros), which is mathematically undefined — producing the warning:
-
-```
-UndefinedMetricWarning: Only one class is present in y_true.
-ROC AUC score is not defined in that case.
-```
-
-**Fix:** Remove or rename the `Colab Files` folder from the dataset directory before loading, or explicitly filter it from `class_names`:
-
-```python
-class_names = [c for c in train_ds.class_names if c != 'Colab Files']
-```
-
-The individual per-class ROC curves in the plots (Images 6–7) remain valid because they were computed per-class before the overall average, and the `Colab Files` class simply had no plotted curve.
-
----
-
-Google Colab Link: https://colab.research.google.com/drive/1LANjF4TDDvyphjzUrx0G2yB2IdmGsH52?usp=sharing
 Google Dataset Link: https://drive.google.com/drive/folders/1cqa2eMVGufvAD9wU5ywf86xvdaVuAW6l?usp=sharing
